@@ -3,8 +3,7 @@ fileUrl <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_powe
 # Download zip file
 download.file(fileUrl, destfile="household_power_consumption.zip", method="curl")
 # Read data set after unzipping the data file
-powerConsumption <- read.table(unz("household_power_consumption.zip", "household_power_consumption.txt"),
-                               header=T, sep=";")
+powerConsumption <- read.table(unz("household_power_consumption.zip", "household_power_consumption.txt"), header=T, sep=";")
 
 # Household power consumption for Feb. 1 and 2, 2007 only
 powerConsumption2 <- powerConsumption[as.character(powerConsumption$Date) %in% c("1/2/2007", "2/2/2007"),]
